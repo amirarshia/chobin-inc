@@ -104,14 +104,22 @@ h1 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.github-button {
-    text-align: center;
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
     z-index: 1000;
     position: relative;
 }
 
-.github-button a {
+.github-button,
+.discord-button {
+    margin: 0 10px;
+}
+
+.github-button a,
+.discord-button a {
     display: inline-block;
     padding: 10px;
     background-color: #333;
@@ -120,12 +128,39 @@ h1 {
     cursor: pointer;
 }
 
-.github-button a:hover {
+.github-button a:hover,
+.discord-button a:hover {
     background-color: #555;
     transform: scale(1.1);
 }
 
-.github-button svg {
+.github-button svg,
+.discord-button svg {
     display: block;
     fill: #fff;
+}
+
+.discord-button a {
+    background-color: #333;
+}
+
+.discord-button a:hover {
+    background-color: #555;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: right 0.5s ease-in-out;
+    z-index: 1001;
+}
+
+.notification.show {
+    right: 20px;
 }
