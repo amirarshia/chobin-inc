@@ -114,12 +114,14 @@ h1 {
 }
 
 .github-button,
-.discord-button {
+.discord-button,
+.instagram-button {
     margin: 0 10px;
 }
 
 .github-button a,
-.discord-button a {
+.discord-button a,
+.instagram-button a {
     display: inline-block;
     padding: 10px;
     background-color: #333;
@@ -129,22 +131,25 @@ h1 {
 }
 
 .github-button a:hover,
-.discord-button a:hover {
+.discord-button a:hover,
+.instagram-button a:hover {
     background-color: #555;
     transform: scale(1.1);
 }
 
 .github-button svg,
-.discord-button svg {
+.discord-button svg,
+.instagram-button svg {
     display: block;
     fill: #fff;
 }
 
-.discord-button a {
+/* Instagram-specific styles */
+.instagram-button a {
     background-color: #333;
 }
 
-.discord-button a:hover {
+.instagram-button a:hover {
     background-color: #555;
 }
 
