@@ -37,6 +37,7 @@ h1 {
     width: 200%;
     height: 200%;
     animation: stars-move 120s ease-in-out infinite;
+    z-index: 1;
 }
 
 .stars::before,
@@ -101,4 +102,30 @@ h1 {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.github-button {
+    text-align: center;
+    margin-top: 20px;
+    z-index: 1000;
+    position: relative;
+}
+
+.github-button a {
+    display: inline-block;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.github-button a:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.github-button svg {
+    display: block;
+    fill: #fff;
 }
