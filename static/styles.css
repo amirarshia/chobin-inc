@@ -151,18 +151,29 @@ h1 {
 .notification {
     position: fixed;
     top: 20px;
-    right: -300px;
+    right: -100%;
+    max-width: 80%;
+    border-color: #ffffff;
+    border-width: 1px;  
+    border-style: solid;
     background-color: #333;
-    color: #fff;
+    color: #ffffff;
     padding: 15px 20px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: right 0.5s ease-in-out;
+    transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
     z-index: 1001;
+    opacity: 0;
 }
 
 .notification.show {
     right: 20px;
+    opacity: 1;
+}
+
+.notification.hide {
+    right: -100%;
+    opacity: 0;
 }
 
 /* New styles for about.html */

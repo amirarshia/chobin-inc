@@ -42,6 +42,35 @@
                 loading="eager"></iframe>
     </div>
     <script>
+        function showNotification(message, type = 'success', duration = 3000) {
+            var notification = document.getElementById('notification');
+            var messageElement = document.getElementById('notification-message');
+            
+            // Set the message
+            messageElement.textContent = message;
+            
+            // Reset classes
+            notification.className = 'notification ' + type;
+            
+            // Trigger reflow
+            notification.offsetHeight;
+            
+            // Show the notification
+            notification.classList.add('show');
+            
+            // Hide the notification after the specified duration
+            setTimeout(function() {
+                // Start the hiding animation
+                notification.classList.remove('show');
+                notification.classList.add('hide');
+                
+                // Remove the element from the DOM after the transition
+                setTimeout(() => {
+                    notification.classList.remove('hide');
+                }, 500); // This should match the transition duration in CSS
+            }, duration);
+        }
+
         document.getElementById('discord-copy').addEventListener('click', function(e) {
             e.preventDefault();
             navigator.clipboard.writeText('chobinnnn').then(function() {
@@ -57,25 +86,6 @@
                 window.open('https://github.com/amirarshia', '_blank');
             }, 1000);
         });
-
-        function showNotification(message, type = 'success', duration = 3000) {
-            var notification = document.getElementById('notification');
-            var messageElement = document.getElementById('notification-message');
-            
-            // Set the message
-            messageElement.textContent = message;
-            
-            // Set the notification type (you can add CSS classes for different types)
-            notification.className = 'notification show ' + type;
-            
-            // Show the notification
-            notification.classList.add('show');
-            
-            // Hide the notification after the specified duration
-            setTimeout(function() {
-                notification.classList.remove('show');
-            }, duration);
-        }
     </script>
     <div id="notification" class="notification">
         <span id="notification-message"></span>
