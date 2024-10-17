@@ -21,7 +21,9 @@ func main() {
 	http.HandleFunc("/static/style.css", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "static/styles.css")
 	})
-
+	http.HandleFunc("/static/script.js", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "static/script.js")
+	})
 	fmt.Println("Server is running on http://localhost:8080")
 	err := http.ListenAndServe(":80", nil)
 	if err != nil {

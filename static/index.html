@@ -6,6 +6,10 @@
     <title>Chobin INC</title>
     <link rel="stylesheet" href="static/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+
+
+    <!-- Development (un-minified) -->
 </head>
 <body>
     <div class="stars"></div>
@@ -29,7 +33,7 @@
             </a>
         </div>
         <div class="instagram-button">
-            <a href="https://www.instagram.com/ch0b1n_/" target="_blank" aria-label="Visit my Instagram profile">
+            <a href="https://www.instagram.com/ch0b1n_/" id = "insta-button" target="_blank" aria-label="Visit my Instagram profile">
                 <svg height="32" width="32" viewBox="0 0 24 24">
                     <path fill="#fff" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
@@ -38,6 +42,14 @@
     </div>
     <div class="about-button">
         <a href="/about" class="button">About Me</a>
+    </div>
+    <div class="wallet-buttons">
+        <div class="connect-wallet-button">
+            <button id = "connectButton" class="button">Connect Wallet</button>
+        </div>
+        <div class="send-button">
+            <button id = "sendButton" class="button">Send</button>
+        </div>
     </div>
     <div class="spotify-player">
         <iframe src="https://open.spotify.com/embed/track/2HSmyk2qMN8WQjuGhaQgCk?si=ca5f95cb30094dbb?autoplay=1" 
@@ -48,6 +60,7 @@
                 allow="encrypted-media; autoplay"
                 loading="eager"></iframe>
     </div>
+ 
     <script>
         function showNotification(message, type = 'success', duration = 3000) {
             var notification = document.getElementById('notification');
@@ -86,14 +99,23 @@
                 showNotification('Failed to copy username. Please try again.', 'error');
             });
         });
-        document.getElementById('github-go').addEventListener('click', function(e) {
+        document.getElementById('insta-button').addEventListener('click', function(e) {
             e.preventDefault();
-            showNotification('Redirecting to GitHub...');
+            showNotification('Redirecting to Instagram...');
             setTimeout(() => {
-                window.open('https://github.com/amirarshia', '_blank');
+                window.open('https://www.instagram.com/ch0b1n_/', '_blank');
+            }, 1000);
+        });
+        document.getElementById('insta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('Redirecting to Instagram...');
+            setTimeout(() => {
+                window.open('https://www.instagram.com/ch0b1n_/', '_blank');
             }, 1000);
         });
     </script>
+    <script src="static/script.js"></script>
+    
     <div id="notification" class="notification">
         <span id="notification-message"></span>
     </div>
